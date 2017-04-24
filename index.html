@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>FREECODECAMP exercise: Build a Random Quote Machine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon-precomposed" href="media/favicon.png">
+    <link rel="shortcut icon" href="media/favicon.png" type="image/png">
+</head>
+
+<body>
+<!--^ exclude in codepen ^-->
+
+<div id="wrapper" class="night">
+  
+  
+  <header id="header">
+    <a href="https://www.freecodecamp.com/demikeison" title="FreeCodeCamp Mickel Metekohy" target="_blank">
+      <img src="media/freecodecamp_logo.svg" alt="free code camp logo" height="40">
+    </a>
+  </header>
+  
+  <main>
+
+    <h1 id="location">Your Place, Home</h1>
+    
+    <div id="top-left">
+      <div class="ow">
+        <div id="clear-sky">
+          <div class="day clear-sky-day">
+            <div class="sun">
+              <div class="sun-border"></div>
+              <div class="sun-border a"></div>
+              <div class="sun-border b"></div>
+              <div class="sun-border c"></div>
+              <div class="sun-border d"></div>
+              <div class="sun-border e"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+          </div>
+          <div class="night clear-sky-night">
+            <div class="stars">
+              <div class="star"></div>
+              <div class="star a"></div>
+              <div class="star b"></div>
+            </div>
+            <div class="fullmoon">
+              <div class="fullmoon-border"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div id="few-clouds">
+          <div class="day few-clouds-day">
+            <div class="sun">
+              <div class="sun-border"></div>
+              <div class="sun-border a"></div>
+              <div class="sun-border b"></div>
+              <div class="sun-border c"></div>
+              <div class="sun-border d"></div>
+              <div class="sun-border e"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+            <div class="cloud">  
+              <div class="cloud-border"></div>
+              <div class="cloud-border cloud-inner"></div>
+            </div>
+          </div>
+          <div class="night few-clouds-night">
+            <div class="fullmoon">
+              <div class="fullmoon-border"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+            <div class="cloud">  
+              <div class="cloud-border"></div>
+              <div class="cloud-border cloud-inner"></div>
+            </div>
+          </div>
+        </div> 
+        
+        
+        <div id="scattered-clouds">
+          <div class="cloud">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div>
+        </div> 
+        
+        
+        <div id="broken-clouds">
+          <div class="cloud a">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div> 
+          <div class="cloud b">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div> 
+        </div> 
+        
+        
+        <div id="shower-rain">
+          <div class="cloud a">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div> 
+          <div class="cloud b">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div>
+          <div class="shower">
+            <div class="rain-drop"></div>
+          </div>
+          <div class="shower a">
+            <div class="rain-drop"></div>
+          </div>
+          <div class="shower b">
+            <div class="rain-drop"></div>
+          </div>
+        </div> 
+        
+        
+        <div id="rain">
+          <div class="day rain-day">
+            <div class="sun">
+              <div class="sun-border"></div>
+              <div class="sun-border a"></div>
+              <div class="sun-border b"></div>
+              <div class="sun-border c"></div>
+              <div class="sun-border d"></div>
+              <div class="sun-border e"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+            <div class="cloud">  
+              <div class="cloud-border"></div>
+              <div class="cloud-border cloud-inner"></div>
+            </div>
+            <div class="shower">
+              <div class="rain-drop"></div>
+            </div>
+            <div class="shower a">
+              <div class="rain-drop"></div>
+            </div>
+          </div>
+          <div class="night rain-night">
+            <div class="fullmoon">
+              <div class="fullmoon-border"></div>
+              <div class="sun-border sun-inner"></div>
+            </div>
+            <div class="cloud">  
+              <div class="cloud-border"></div>
+              <div class="cloud-border cloud-inner"></div>
+            </div>
+            <div class="shower">
+              <div class="rain-drop"></div>
+            </div>
+            <div class="shower a">
+              <div class="rain-drop"></div>
+            </div>
+          </div>
+        </div> 
+        
+        
+        <div id="thunderstorm">
+          <div class="cloud a">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div> 
+          <div class="cloud b">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div>
+          <div class="lightning">
+            <div class="flash"></div>
+          </div>
+          <div class="lightning a">
+            <div class="flash"></div>
+          </div>
+        </div> 
+        
+        
+        <div id="snow">
+          <div class="cloud a">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div> 
+          <div class="cloud b">
+            <div class="cloud-border"></div>
+            <div class="cloud-border cloud-inner"></div>
+          </div>
+          <div class="snowflakes">
+            <div class="star"></div>
+            <div class="star a"></div>
+            <div class="star b"></div>
+          </div>
+          <div class="snowflakes a">
+            <div class="star"></div>
+            <div class="star a"></div>
+            <div class="star b"></div>
+          </div>
+          <div class="snowflakes b">
+            <div class="star"></div>
+            <div class="star a"></div>
+            <div class="star b"></div>
+          </div>
+        </div> 
+        
+        
+        <div id="mist">
+          <div class="mist-bank">
+            <div class="bank"></div>
+          </div>
+          <div class="mist-bank a">
+            <div class="bank"></div>
+          </div>
+          <div class="mist-bank b">
+            <div class="bank"></div>
+          </div>
+          <div class="mist-bank c">
+            <div class="bank"></div>
+          </div>
+          <div class="mist-bank d">
+            <div class="bank"></div>
+          </div>
+          <div class="mist-bank e">
+            <div class="bank"></div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    <!-- end #top-left -->
+    
+    <div id="bottom-right">
+      <div id="temp">
+        <span class="value">__</span><span class="deg">&#176;</span><span class="unit">C</span>
+      </div>
+      
+      <div id="desc">
+        <span class="value">Make a guess<br><small>Your location could not be determined !!</small></span>
+      </div>
+    </div>
+    <!-- end #bottom-right -->
+    
+    <div class="clearfix"></div>
+  </main>
+
+  <footer>
+    <div class="info-btn-container single-btn">
+        <label class="info btn"><input type="checkbox" name="info" value="info">
+          <div id="info">
+            <div class="inner-info">
+              <div class="social">
+                <a href="https://twitter.com/mickelmetekohy" class="tweet btn"><span class="sr-only">Twitter</span></a>
+                <a href="https://github.com/MickelMetekohy" class="github btn"><span class="sr-only">Github</span></a>
+                <a href="https://www.linkedin.com/in/mickel-metekohy-31105865" class="linkedin btn"><span class="sr-only">LinkedIn Quote</span></a>
+                <span class="exit btn"><span class="sr-only">Exit Info</span></span>
+              </div>
+              <div class="copy">
+                <p>#FreeCodeCamp Exersize:<br>Show the Local Weather.</p>
+              </div>
+              <div class="fcc">
+                <a href="https://www.freecodecamp.com/demikeison" title="FreeCodeCamp Mickel Metekohy" target="_blank">
+                  <img src="media/freecodecamp_logo.svg" alt="free code camp logo" height="40">
+                </a>
+              </div>
+            </div>
+          </div>
+        </label>
+      </div>
+  </footer>
+  
+</div>
+<!-- end #wrapper -->
+
+<!--v exclude in codepen v-->
+    <script src="js/index.js"></script>
+</body>
+</html>

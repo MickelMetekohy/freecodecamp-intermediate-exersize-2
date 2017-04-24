@@ -1,0 +1,800 @@
+/* base */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    background-color: #fff;
+    overflow-x: hidden;
+}
+
+#wrapper.night {
+    color: #fff;
+    background-color: #000;
+}
+#wrapper.night .day { display:none; }
+#wrapper.day .night { display:none; }
+
+
+/* header (logo) */
+#header {
+    position: absolute;
+    z-index: 10;
+    left: -200px;
+    top: 20px;
+    background-color: hotpink;
+}
+
+#header img {
+    display: block;
+    -webkit-clip-path: inset(0% 0% 0% 81%);
+    clip-path: inset(0% 0% 0% 81%);
+}
+
+h1 {
+    font-size: 70px;
+    font-size: 7vw;
+    word-break: break-word;
+    padding: 100px 20px 20px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#desc {
+    text-align: center;
+    font-size: 40px;
+    font-size: 4vw;
+    padding: 0px 10px 20px;
+    text-transform: capitalize;
+}
+small {
+  font-size: 12px;
+  text-transform: initial;
+  font-style: italic;
+}
+
+.ow {
+  width: 100%;
+  height: 30vw;
+  position: relative;
+}
+
+#temp {
+    text-align: center;
+    font-size: 240px;
+    font-size: 24vw;
+    word-break: break-word;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* postition #clear-sky */
+#clear-sky { 
+  position: relative; 
+  display: none;
+}
+#clear-sky .clear-sky-day { 
+  position: relative;
+  top: 3.5vw;
+  left: 0vw;
+}
+#clear-sky .clear-sky-day .sun {
+  position: relative;
+  transform: scale(0.24);
+}
+#clear-sky .clear-sky-night { 
+  position: relative;
+  top: 3.5vw;
+  left: 0vw;
+}
+#clear-sky .clear-sky-night .fullmoon {
+  position: relative;
+  transform: scale(0.24);
+}
+#clear-sky .clear-sky-night .stars { position: relative; }
+#clear-sky .clear-sky-night .stars.a {
+  top: 0vw;
+  left: 0vw;
+}
+#clear-sky .clear-sky-night .stars.b {
+  top: 0vw;
+  left: 0vw;
+}
+
+
+/* postition #few-clouds */
+#few-clouds { 
+  position: relative;
+  display: none;
+}
+#few-clouds .few-clouds-day { 
+  position: relative;
+  top: 2.5vw;
+  left: -9.5vw;
+}
+#few-clouds .few-clouds-day .sun {
+  position: relative;
+  transform: scale(0.24);
+}
+#few-clouds .few-clouds-day .cloud {
+  position: relative;
+  transform: scale(0.4);
+  top: 16vw;
+  left: 12vw;
+}
+#few-clouds .few-clouds-night { 
+  position: relative;
+  top: 2.5vw;
+  left: -9.5vw;
+}
+#few-clouds .few-clouds-night .fullmoon {
+  position: relative;
+  transform: scale(0.24);
+}
+#few-clouds .few-clouds-night .cloud {
+  position: relative;
+  transform: scale(0.4);
+  top: 16vw;
+  left: 12vw;
+}
+
+
+/* postition #scattered-clouds */
+#scattered-clouds { 
+  position: relative; 
+  top: 14.5vw;
+  display: none; 
+}
+#scattered-clouds .cloud {
+  position: relative;
+  transform: scale(0.4);
+}
+
+
+/* postition #broken-clouds */
+#broken-clouds { 
+  position: relative; 
+  top: 10vw;
+  display: none; 
+}
+#broken-clouds .cloud { 
+  position: relative;
+}
+#broken-clouds .cloud.a {
+  position: relative;
+  transform: scale(0.35);
+  top: 0vw;
+  left: -9vw;
+}
+#broken-clouds .cloud.b {
+  position: relative;
+  transform: scale(0.4);
+  top: 7vw;
+  left: 3vw;
+}
+
+/* postition #shower-rain */
+#shower-rain {
+  position: relative; 
+  top: 10vw;
+  display: none; 
+}
+#shower-rain .cloud { 
+  position: relative;
+}
+#shower-rain .cloud.a {
+  transform: scale(0.35);
+  top: 0vw;
+  left: -9vw;
+}
+#shower-rain .cloud.b {
+  transform: scale(0.4);
+  top: 7vw;
+  left: 3vw;
+}
+#shower-rain .shower { 
+  position: relative;
+  top: 9vw;
+  left: 26vw;
+}
+#shower-rain .shower.a { 
+  top: 19vw;
+  left: 46vw;
+}
+#shower-rain .shower.b { 
+  top: 18vw;
+  left: 56vw;
+}
+
+/* postition #rain */
+#rain {
+  position: relative; 
+  display: none; 
+}
+#rain .rain-day { 
+  position: relative;
+  top: 2.5vw;
+  left: -9.5vw;
+}
+#rain .rain-day .sun {
+  position: relative;
+  transform: scale(0.24);
+}
+#rain .rain-day .cloud {
+  position: relative;
+  transform: scale(0.4);
+  top: 16vw;
+  left: 12vw;
+}
+#rain .rain-night { 
+  position: relative;
+  top: 0.5vw;
+  left: -9.5vw;
+}
+#rain .rain-night .fullmoon {
+  position: relative;
+  transform: scale(0.24);
+}
+#rain .rain-night .cloud {
+  position: relative;
+  transform: scale(0.4);
+  top: 16vw;
+  left: 12vw;
+}
+#rain .shower { 
+  position: relative;
+  top: 28vw;
+  left: 55vw;
+}
+#rain .shower.a { 
+  top: 27.5vw;
+  left: 65vw;
+}
+
+
+/* postition #thunderstorm */
+#thunderstorm {
+  position: relative; 
+  top: 10vw;
+  display: none; 
+}
+#thunderstorm .cloud { 
+  position: relative;
+}
+#thunderstorm .cloud.a {
+  transform: scale(0.35);
+  top: 0vw;
+  left: -9vw;
+}
+#thunderstorm .cloud.b {
+  transform: scale(0.4);
+  top: 7vw;
+  left: 3vw;
+}
+#thunderstorm .lightning { 
+  position: relative;
+  top: 12vw;
+  left: 20vw;
+  transform: scale(0.6);
+}
+#thunderstorm .lightning.a { 
+  top: 11vw;
+  left: 32vw;
+  transform: scale(0.75);
+}
+
+
+/* postition #snow */
+#snow {
+  position: relative; 
+  top: 10vw;
+  display: none; 
+}
+#snow .cloud { 
+  position: relative;
+}
+#snow .cloud.a {
+  transform: scale(0.35);
+  top: 0vw;
+  left: -9vw;
+}
+#snow .cloud.b {
+  transform: scale(0.4);
+  top: 7vw;
+  left: 3vw;
+}
+#snow .snowflakes { 
+  position: relative;
+  top: 6vw;
+  left: -8vw;
+  transform: scale(0.8);
+}
+#snow .snowflakes.a { 
+  top: 13vw;
+  left: 8vw;
+  transform: scale(1);
+}
+#snow .snowflakes.b { 
+  top: 12vw;
+  left: 18vw;
+}
+
+#mist {
+  position: relative; 
+  top: 1vw;
+  display: none; 
+}
+#mist .mist-bank {
+  position: relative;
+  transform: scale(0.3);
+  left: -5vw;
+}
+#mist .mist-bank.a {
+  top: 5vw;
+  left: 5vw;
+}
+#mist .mist-bank.b {
+  top: 10vw;
+  left: -5vw;
+}
+#mist .mist-bank.c {
+  top: 15vw;
+  left: 5vw;
+}
+#mist .mist-bank.d {
+  top: 20vw;
+  left: -5vw;
+}
+#mist .mist-bank.e {
+  top: 25vw;
+  left: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+/* cloud shape */
+.cloud-border {
+	width: 100vw; 
+  height: 30vw;
+	background: #000;
+	border-radius: 2000px;
+	position: absolute; 
+}
+.night .cloud-border { background: #fff; }
+.cloud-border:before, .cloud-border:after {
+	content: '';
+	position: absolute; 
+	background: #000;
+	width: 50vw; 
+  height: 40vw;
+  top: -7.5vw; 
+  left: 5vw;
+	border-radius: 2000px;
+	transform: rotate(30deg);
+}
+.night .cloud-border:before, .night .cloud-border:after { background: #fff; }
+.cloud-border:after {
+	width: 60vw; 
+  height: 60vw;
+	top: -27.5vw; 
+  left: auto; 
+  right: 7.5vw;
+}
+.cloud-inner {
+  top: -0.25vw;
+	left: 0;
+  background-color: #fff;
+	transform: scale(0.9);
+  position: absolute;
+}
+.night .cloud-inner { background-color: #000; }
+.cloud-inner:before, .cloud-inner:after { background-color: #fff; }
+.night .cloud-inner:before, .night .cloud-inner:after { background-color: #000; }
+
+
+/* sun shape */
+.sun-border {
+	width: 100vw; 
+  height: 100vw;
+	background: #000;
+	border-radius: 10000px;
+	position: absolute; 
+}
+.night .sun-border { background: #fff; }
+.sun-border:before, .sun-border:after {
+	content: '';
+  position: absolute;
+  background: #000;
+  width: 5vw;
+  height: 130vw;
+  top: -15vw;
+  left: 47vw;
+  border-radius: 2000px;
+  transform: rotate(0deg);
+}
+.night .sun-border:before, .night .sun-border:after { background: #fff; }
+.sun-border.a:before { transform: rotate(20deg); }
+.sun-border.a:after { transform: rotate(40deg); }
+.sun-border.b:before { transform: rotate(60deg); }
+.sun-border.b:after { transform: rotate(80deg); }
+.sun-border.c:before { transform: rotate(100deg); }
+.sun-border.c:after { transform: rotate(120deg); }
+.sun-border.d:before { transform: rotate(140deg); }
+.sun-border.d:after { transform: rotate(160deg); }
+.sun-inner {
+  top: 0;
+	left: 0;
+  background-color: #fff;
+	transform: scale(0.9);
+  position: absolute;
+}
+.night .sun-inner { background-color: #000; }
+.sun-inner:before, .sun-inner:after { 
+  content: none;
+}
+
+
+/* fullmoon shape */
+.fullmoon-border {
+	width: 100vw; 
+  height: 100vw;
+	background: #000;
+	border-radius: 10000px;
+	position: absolute; 
+}
+.night .fullmoon-border { background: #fff; }
+.fullmoon-inner {
+  top: 0;
+	left: 0;
+  background-color: #fff;
+	transform: scale(0.9);
+  position: absolute;
+}
+.night .sun-inner { background-color: #000; }
+
+
+/* star shape */
+.star {
+	width: 0; 
+  height: 0;
+	position: absolute;
+  background: #fff;
+  top: -4vw;
+  left: 37vw;
+}
+.star.a {
+  top: 7vw;
+  left: 32vw;
+}
+.star.b {
+  top: 0vw;
+  left: 30vw;
+}
+
+.night .star {
+  background: #000;
+}
+.star:before, .star:after {
+  content: '*';
+  position: absolute;
+  color: #000;
+  font-size: 7vw;
+}
+.star:after {
+  color: #fff;
+  transform: scale(0.7);
+  top: -0.45vw;
+}
+.night .star:before, .night .star:after {
+  color: #fff;
+}
+.night .star:after {
+  color: #000;
+}
+
+/* rain shape */
+.rain-drop {
+  width: 1vw;
+  height: 5vw;
+  background: #000;
+  border-radius: 1vw;
+  position: absolute;
+  transform: rotate(-9deg);
+}
+.night .rain-drop { background: #fff; }
+.rain-drop:before, .rain-drop:after {
+  content: '';
+	position: absolute; 
+	background: #000;
+  top: 0.3vw;
+  left: 2vw;
+	width: 1vw; 
+  height: 4vw; 
+	border-radius: 1vw;
+}
+.rain-drop:after {
+  top: -0.6vw;
+  left: 4vw;
+}
+.night .rain-drop:before, .night .rain-drop:after { background: #fff; }
+
+/* flash shape */
+.flash {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 4vw solid transparent;
+  border-right: 3vw solid #000;
+  border-top: 10vw solid #000;
+  transform: skewX(-34deg);
+}
+.night .flash {
+  border-right: 3vw solid #fff;
+  border-top: 10vw solid #fff; 
+}
+.flash:before {
+  content: '';
+  width: 0;
+  height: 0;
+  top: -3vw;
+  left: 0vw;
+  position: absolute;
+  border-left: 3vw solid transparent;
+  border-right: 2vw solid transparent;
+  border-top: 11vw solid #000;
+  transform: skewX(-6deg);
+}
+.night .flash:before { border-top: 11vw solid #fff; }
+
+/* bank shape */
+.bank {
+  width: 100vw;
+  height: 15vw;
+  background: #000;
+  border-radius: 2000px;
+  position: absolute;
+}
+.bank:before {
+  content: '';
+  width: 100vw;
+  height: 15vw;
+  background: #fff;
+  border-radius: 2000px;
+  position: absolute;
+  top: 0vw;
+  left: 0vw;
+  transform: scale(0.9);
+}
+.night .bank {
+  background: #fff;
+}
+.night .bank:before {
+  background: #000;
+}
+
+
+
+
+@media all and (orientation:landscape) {
+  #top-left {
+    float: left;
+    width: 50%;
+  }
+  #bottom-right {
+    float: left;
+    width: 50%;
+    padding: 10vw 0;
+  }
+  #temp {
+    text-align: left;
+    font-size: 13vw;
+    padding-left: 12vw;
+  }
+  #desc {
+    text-align: left;
+    font-size: 3vw;
+    padding-left: 12vw;
+  }
+  #clear-sky .clear-sky-night .stars { left: -20vw; }
+  #shower-rain .shower { left: 10vw; }
+  #shower-rain .shower.a { left: 30vw; }
+  #shower-rain .shower.b { left: 40vw; }
+  #rain .shower { left: 40vw; }
+  #rain .shower.a { left: 49vw; }
+  #thunderstorm .lightning { 
+    top: 14vw;
+    left: 14vw;
+  }
+  #thunderstorm .lightning.a { 
+    top: 13vw;
+    left: 23vw;
+  }
+  #snow .snowflakes { 
+    top: 9vw;
+    left: -18vw;
+  }
+  #snow .snowflakes.a { 
+    top: 16vw;
+    left: -2vw;
+  }
+  #snow .snowflakes.b { 
+    top: 15vw;
+    left: 10vw;
+  }
+}
+
+
+
+
+
+/* footer toggle */
+.single-btn {
+    width: 42px;
+    margin: 0 auto;
+}
+
+.btn {
+    border: none;
+    display: inline-block;
+    background: #fff;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #fff;
+    margin: 2px 1px;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+    background-color: mediumaquamarine;
+}
+
+.info {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+}
+
+input[type="checkbox" i] { display: none; }
+
+input[type="checkbox" i]:checked + #info { left: -30px; }
+
+button:before,
+a:before,
+.info:before,
+.exit:before {
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: relative;
+    top: 1px;
+}
+
+a:before { top: 12px; }
+
+.info:before {
+    content: "\f129";
+    top: 11px;
+    left: 16px;
+}
+
+/* footer fcc tent */
+#info {
+    position: absolute;
+    width: 100%;
+    bottom: -22px;
+    left: -515px;
+    z-index: 0;
+    transition: all .45s;
+    -webkit-transition: all .45s;
+}
+
+.inner-info {
+    position: relative;
+    margin: 0px auto;
+    width: 280px;
+    height: 50px;
+    text-align: center;
+}
+
+.inner-info:before,
+.inner-info:after {
+    content: '';
+    left: 0;
+    bottom: 0px;
+    z-index: -1;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 260px solid hotpink;
+}
+
+.inner-info:after {
+    left: 60px;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 160px solid mediumaquamarine;
+}
+
+.social {
+    position: relative;
+    top: -93px;
+}
+
+.copy {
+    margin: -95px 0 0 0;
+    color: #fff;
+}
+
+.copy p { font-size: 14px; }
+
+.copy a { color: #fff; }
+
+.tweet:before { content: "\f099"; }
+
+.github:before { content: "\f09b"; }
+
+.linkedin:before { content: "\f0e1"; }
+
+.exit {
+  width: 30px;
+  height: 30px;
+}
+
+.exit:before { top: 7px; }
+
+.exit:before { content: "\f00d"; }
+
+.fcc {
+  overflow: hidden;
+  width: 50px;
+}
+
+.fcc img {
+  position: absolute;
+  left: -102px;
+  bottom: 1px;
+  display: block;
+  -webkit-clip-path: inset(0% 0% 0% 81%);
+  clip-path: inset(0% 0% 0% 81%);
+}
