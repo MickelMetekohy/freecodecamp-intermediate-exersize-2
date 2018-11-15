@@ -1,15 +1,4 @@
 /**
- * https://geoip.nekudo.com/api/
- * Get geo ip info object from geoip.nekudo.com
- */
-const ipPromise = fetch('https://geoip.nekudo.com/api/');
-ipPromise
-  .then((data) => data.json())
-  // .then((data) => console.log(data))
-  .then((data) => getWeather(data))
-  .catch((err) => console.error(err));
-
-/**
  * getWeather
  * @param loc object || ""; data from https://geoip.nekudo.com/api/
  *
@@ -25,6 +14,25 @@ const getWeather = function(loc = "") {
     .then((data) => render(data))
     .catch((err) => console.log(err));
 }
+
+/**
+ * https://geoip.nekudo.com/api/
+ * Get geo ip info object from geoip.nekudo.com
+ */
+const ipPromise = fetch('https://geoip.nekudo.com/api/');
+ipPromise
+  .then((data) => data.json())
+  // .then((data) => console.log(data))
+  // .then((data) => getWeather(data))
+  .catch((err) => console.error(err));
+// Unfortunately all free ip lookup api’s that provide geo information currently do not support ssl. let's set a default lat. lng.
+getWeather({
+  'location': {
+    'latitude': 42.346425,
+    'longitude': -71.097625,
+  }
+});
+
 
 /**
  * findIcon
@@ -77,7 +85,9 @@ const render = function(weather) {
   temperture.textContent = `${Math.round(weather.data[0].temp)}`;
   
   const description = Array.from(document.querySelectorAll('#desc .value'))[0];
-  description.textContent = `${weather.data[0].weather.description}`;
+  console.log([description]);
+  description.innerHTML = `${weather.data[0].weather.description}`;
+  description.innerHTML += ` <br><small>Unfortunately all free ip lookup api’s that provide geo information currently do not support ssl therefor your location can not be determined</small>`;
   
   const theme = dayOrNight();
 }
